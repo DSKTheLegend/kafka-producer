@@ -14,9 +14,6 @@ public class ProducerMain {
     public static void main(String[] args) {
         log.info("I am a Kafka Producer");
 
-//        String bootstrapServers = "127.0.0.1:9092";\
-
-
         // create Producer properties
         log.info("Reading Kafka Config file");
         Properties properties = new Properties();
@@ -71,6 +68,7 @@ public class ProducerMain {
             // flush data - synchronous
             producer.flush();
         }
+        scanner.close();
         // flush and close producer
         producer.close();
     }
